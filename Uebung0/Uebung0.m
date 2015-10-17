@@ -26,17 +26,17 @@ x'
 y=17;
 y
 clear all
-y % Sollte entfernt werden um das Programm ausführen zu können.
+%y % Sollte entfernt werden um das Programm ausführen zu können.
 
 % Aufgabe 2g)
 help cos
 help sin
 
 % Aufgabe 2h)
-helpdesk % Sollte entfernt werden um das Programm ausführen zu können.
+%helpdesk % Sollte entfernt werden um das Programm ausführen zu können.
 
 % Aufgabe 2i)
-lookfor Logarithmus % Sollte entfernt werden um das Programm ausführen zu können.
+%lookfor Logarithmus % Sollte entfernt werden um das Programm ausführen zu können.
 
 % Aufgabe 3b)
 
@@ -53,3 +53,18 @@ x = ones(1,3);
 
 A % Ausgabe
 x % Ausgabe
+
+% Aufgabe 3c)
+A*x'
+x*A
+%A*x % Sollte entfernt werden um das Programm ausführen zu können.
+A*A
+A.*A
+
+% Aufgabe 3d)
+x = -2:0.1:2;
+f = x.^3;
+plot(x,f) % plot(x,f,':')
+figure(2); clf;
+g=1./(1+x.^2);
+plot(x,g)

@@ -39,207 +39,96 @@ Freie Universit\"at Berlin, FB Mathematik und Informatik,\\Institut f\"ur Inform
 
 \section*{Aufgabe 1}
 
-\underline{Inhalte}:
-\begin{itemize}
-\item[2.] \textbf{Der Umgang mit Unix}\\(unwichtig, falls eigene MATLAB Entwicklungsumgebung vorhanden)
-\begin{itemize}
-\item Einloggen / Ausloggen
-\item Dateisystem
-\item Programme starten und beenden
-\item Prozessemanagement
-\end{itemize}
-\item[3.] \textbf{Eine Beispielsitzung}\\(absolute MATLAB Basics, unwichtig, falls MATLAB bereits bekannt)
-\begin{itemize}
-\item Matrizen
-\item Operationen
-\item flops / tics /tocs
-\end{itemize}
-\item[4.] \textbf{Bedingte Verzweigungen und Schleifen}\\(absolute Programmier-Basics, unwichtig, falls MATLAB bereits bekannt)
-\begin{itemize}
-\item if
-\item for
-\item while
-\item break
-\end{itemize}
-\end{itemize}
-\newpage
+\subsection*{Teilaufgabe a)}
+
+$55_{10} = 5 \cdot 10^1 + 5 \cdot 10^0 = 55_{10} = 1 \cdot 7^2 + 0 \cdot 7^1 + 6 \cdot 7^0 = 106_{7}$
+
+\subsection*{Teilaufgabe b)}
+
+$42_{7} = 4 \cdot 7^1 + 2 \cdot 7^0 = 30_{10} = 1 \cdot 3^3 + 0 \cdot 3^2 + 1 \cdot 3^1 + 0 \cdot 3^0 = 1010_{3}$
+
+\subsection*{Teilaufgabe c)}
+
+$12321_{4} = 1 \cdot 4^4 + 2 \cdot 4^3 + 3 \cdot 4^2 + 2 \cdot 4^1 +1 \cdot 4^0 = 441_{10} = 1 \cdot 2^8 + 1 \cdot 2^7 + 0 \cdot 2^6 + 1 \cdot 2^5 + 1 \cdot 2^4 + 1 \cdot 2^3 + 0 \cdot 2^2 + 0 \cdot 2^1 + 1 \cdot 2^0 = 110111001_{2}$
+
+\subsection*{Teilaufgabe d)}
+
+$17HAI_{26} = 1 \cdot 26^4 + 7 \cdot 26^3 + H \cdot 26^2 + A \cdot 26^1 + I \cdot 26^0 = 592454_{10} = C \cdot 36^3 + 25 \cdot 36^2 + 5 \cdot 36^1 + 2 \cdot 36^0 = C52_{36}$
 
 \section*{Aufgabe 2}
 
-\subsection*{Teilaufgabe a)}
-
-...einloggen...
-
-\subsection*{Teilaufgabe b)}
-
-...Terminal starten...
-
-\subsection*{Teilaufgabe c)}
-
-...MATLAB starten...
-
-\subsection*{Teilaufgabe d)}
-
-\begin{verbatim}
-ans = 56
-a = 7
-b = 8
-ans = -1
-ans = 0.8750
-c = 15
-c = -1
-c = 56
-ans = 8
-a = 7
-\end{verbatim}
-
-
-\subsection*{Teilaufgabe e)}
-
-\begin{verbatim}
-x =
-
-     1     2     3
-
-
-ans =
-
-     1
-     2
-     3
-\end{verbatim}
-
-
-\subsection*{Teilaufgabe f)}
-
-\begin{verbatim}
-Undefined function or variable 'y'.
-
-Error in Uebung0 (line 29)
-y
-\end{verbatim}
-\newpage
-
-\subsection*{Teilaufgabe g)}
-
-\begin{verbatim}
-cos - Cosine of argument in radians
-
-    This MATLAB function returns the cosine for each element of X.
-
-    Y = cos(X)
-
-    Reference page for cos
-
-    See also acos, acosd, cosd, cosh
-
-    Other uses of cos
-        symbolic/cos
-
-sin - Sine of argument in radians
-
-    This MATLAB function returns the sine of the elements of X.
-
-    Y = sin(X)
-
-    Reference page for sin
-
-    See also asin, asind, sind, sinh
-
-    Other uses of sin
-        symbolic/sin
-\end{verbatim}
-
-\subsection*{Teilaufgabe h)}
-
-Hilfefenster \"offnet sich...
-
-
-\subsection*{Teilaufgabe i)}
-
-\begin{verbatim}
-Logarithmus not found.
-\end{verbatim}
-\newpage
-
 \section*{Aufgabe 3}
 
+... siehe \texttt{dual1.m} und \texttt{dual2.m}
+
+\section*{Aufgabe 4}
+
 \subsection*{Teilaufgabe a)}
 
-...neue MATLAB Datei \"offnen...
+\begin{verbatim}
+     15 = 01111
+     -5 = 11011 <-- 11010 <-- 00101
+15+(-5) = 01111 + 11011 = 01010
+     10 = 01010
+\end{verbatim}
+
+\begin{verbatim}
+     15 = 1111
+      5 =  101
+   15-5 = 1111 - 101 = 1010
+     10 = 1010
+\end{verbatim}
+
 
 \subsection*{Teilaufgabe b)}
 
+Rechnung f\"ur $3+(-2)$
 \begin{verbatim}
-A = [];
-for i=1:3:9
-   v = colon(i,i+2);
-   A = vertcat(A,v); 
-end
+-------------- Zweierkomplement
+     3 = 00011
+    -2 = 11110 <-- 11101 <-- 00010
+3+(-2) = 00011 + 11011 = 00001
+     1 = 00001
+     
+-------------- Einerkomplement
+     3 = 00011
+    -2 = 11101 <-- 00010
+3+(-2) = 00011 + 11101 = 00000
+     0 = 00000
+\end{verbatim}
+Rechnung f\"ur $3+(-3)$
+\begin{verbatim}
+-------------- Zweierkomplement
+     3 = 00011
+    -3 = 11101 <-- 11100 <-- 00011
+3+(-3) = 00011 + 11101 = 00000
+     0 = 00000
 
-% oder A = [1 2 3; 4 5 6; 7 8 9]
-
-x = ones(1,3);
-% oder x = [1 1 1]
-
-A % Ausgabe
-x % Ausgabe
+-------------- Einerkomplement
+     3 = 00011
+    -3 = 11100 <-- 00011
+3+(-3) = 00011 + 11100 = 11111
+    -1 = 11111
+\end{verbatim}
+Rechnung f\"ur $3+(-4)$
+\begin{verbatim}
+-------------- Zweierkomplement
+     3 = 00011
+    -4 = 11100 <-- 11011 <-- 00100
+3+(-4) = 00011 + 11100 = 11111
+    -1 = 11111
+    
+-------------- Einerkomplement
+     3 = 00011
+    -4 = 11011 <-- 00100
+3+(-4) = 00011 + 11011 = 11110
+    -2 = 11110
 \end{verbatim}
 
 \subsection*{Teilaufgabe c)}
 
-\begin{verbatim}
-A*x' =
-
-     6
-    15
-    24
-    
-x*A =
-
-    12    15    18
-
-A*x % Sollte entfernt werden um das Programm ausfuehren zu koennen.
-
-Error using  * 
-Inner matrix dimensions must agree.
-
-A*A =
-
-    30    36    42
-    66    81    96
-   102   126   150
-
-
-A.*A =
-
-     1     4     9
-    16    25    36
-    49    64    81
-\end{verbatim}
-Warum liefert $A*x'$ ein anderes Ergebnis als $x*A$?
-\begin{itemize}
-\item Matrixmultiplikation: $3 \times 3 * 3 \times 1 = 3 \times 1 \neq 1 \times 3 = 1 \times 3 * 3 \times 3$
-\end{itemize}
-Wieso erzeugt $A*x$ eine Fehlermeldung?
-\begin{itemize}
-\item Matrixmultiplikation kann nicht ausgef\"uhrt werden, weil die Dimensionen nicht stimmen: $3 \times 3 * 1 \times 3 = ERROR$
-\end{itemize}
-Was ist wohl der Unterschied zwischen $A*A$ und $A.*A$?
-\begin{itemize}
-\item $A*A$ entspricht der Matrixmultiplikation von $A$ mit $A$.
-\item $A.*A$ entspricht der komponentenweise Multiplikation\\($a_{ij}^{(1)}*a_{ij}^{(2)}$, mit $1 \leq i,j \leq 3$)
-\end{itemize}
-
-\subsection*{Teilaufgabe d)}
-
-\begin{verbatim}
-x = -2:0.1:2;
-f = x.^3;
-plot(x,f) % Die Zeile sollte lauten: plot(x,f,':')
-figure(2); clf;
-g=1/(1+x.^2); % Die Zeile muesste lauten: g=1./(1+x.^2);
-plot(x,g)
-\end{verbatim}
+Die m\"ogliche Range einer 5-Bit Zweierkomplementzahl wird \"uberschritten.\\
+$$minBound(Zweierkomplement_{5 Bit}) = 2^{4}$$
+$$maxBound(Zweierkomplement_{5 Bit}) = 2^{4} -1$$
 
 \end{document}

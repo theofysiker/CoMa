@@ -1,0 +1,106 @@
+\documentclass{llncs}
+
+\usepackage{graphicx} % to be able to include graphics
+\usepackage[ngerman]{babel}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\begin{document}
+
+\pagestyle{headings}               % switches on printing of running heads
+
+
+\mainmatter                        % start of the contributions
+
+\title{Computerorientierte Mathematik I}
+\subtitle{Mitschrft der Tutorien}
+\titlerunning{Computerorientierte Mathematik I\\
+\"Ubung 0}
+
+\author{Samanta Scharmacher\inst{1}\\Nicolas Lehmann\inst{2} (Dipl. Kfm., BSC)}
+\authorrunning{Samanta Scharmacher \& Nicolas Lehmann} % abbreviated author list (for running head)
+\tocauthor{Samanta Scharmacher, Nicolas Lehmann}
+
+\date{\today}
+
+\institute{
+Freie Universit\"at Berlin, FB Mathematik und Informatik,\\
+Institut f\"ur Informatik, \email{scharbrecht@zedat.fu-berlin.de}
+\and
+Freie Universit\"at Berlin, FB Mathematik und Informatik,\\Institut f\"ur Informatik, AG Datenbanksysteme, Raum 170,\\
+\email{mail@nicolaslehmann.de}, \texttt{http://www.nicolaslehmann.de}
+}
+
+\maketitle
+
+\begin{center}
+\includegraphics{fubsiegel.jpg}
+\end{center}
+
+\chapter*{Tutorium 1, 28.10.2015}
+
+Tutor stellt sich vor: Tim Dittmann, eMail: tim@zedat.fu-berlin.de\\
+Die geschriebenen Programme an die eMail-Adresse des Tutors senden.
+
+\section*{Organisatorisches}
+
+Skript abzuholen im Copyshop in Dahlem Dorf (K\"onnigign-Luise -Strasse,\\
+Preis 5,80 EUR\\
+\\
+Scheinkriterien:
+\begin{itemize}
+\item Klausur bestehen mit $\geq 4.0$
+\item Klausurtermine 05.02.2015 und 15.04.2015
+\item 60\% der Programmieraufgaben
+\item 60\% der Theorieaufgaben
+\item einmal Vorrechnen
+\end{itemize}
+Die Abgabe der \"ubungszettel erfolgt in Zweiergruppen. Es ist ok, tutorium\"ubergreifende \"Ubungsgruppen zu bilden.
+Abgabe soll bei Tim Dittmann erfolgen (Samanta Scharmacher und Nicolas Lehmann), zwei Wochen nach dem Erscheinen des Zettels. Quellcode an die eMail senden und Abgabe der L\"osung des Zettel inklusive gedrucktem Quellcode ins Fach des Tutors.\\
+\\
+Subject der eMail = \texttt{[CoMa] <Name1> <Name2> <Uebungszettelnummer>}\\
+\\
+Abgabe der Dateien in gezippter Form. Es soll immer eine Run-Datei \texttt{run\_x\_y.m} und Funktions-Dateien abgegeben werden. (Mit x ist Zettelnummer und y ist Aufgabennummer.)
+
+\section*{Positiossysteme}
+
+
+Problem: Nat\"urliche Zahlen sind abstrakte mathematische Objekte, die wir darstellen wollen.\\
+\\
+L\"osung hierf\"ur sind Positionssysteme.\\
+\\
+$n  \in \mathbb{N}$, mit Basis $q \in \mathbb{N} \setminus \{0,1\}$\\
+\\
+$n = \sum_{i=0}^{k} r_i \cdot qî, 0 \leq r_i < q$ und identifizieren $n$ mit dem $r_i$ bzw. mit Ziffern (Darstellung von $n$ zur Basis $q$)\\
+\\
+Zum Beispiel:\\
+$1 \cdot 10^2 + 2 \cdot 10^1 + 3 \cdot 10^0 = 123_{10}$\\
+$1 \cdot 7^2 + 2 \cdot 7^1 + 3 \cdot 7^0 = 123_7$\\
+\\
+Umrechnen: $q \in \mathbb{N} \setminus \{0,1\}$\\
+\\
+$n_0 = \sum_{i=0}^{k} r_i \cdot q^i \longrightarrow \frac{n_0}{q} = \sum_{i=1}^{k} r_i \cdot q^{i-1}$ + Rest $r_0$\\
+$n_1 = \sum_{i=0}^{k} r_i \cdot q^i \longrightarrow \frac{n_1}{q} = \sum_{i=1}^{k} r_i \cdot q^{i-2}$ + Rest $r_1$\\
+...\\
+$n_k = r_k \cdot 1 \longrightarrow \frac{n_k}{q} = 0$ + Rest $r_k$\\
+\\
+$\Rightarrow$ Darstellung von $n$ ist $r_k r_{k-1} ... r_1 r_0$\\
+\\
+Beispiel: $n = 52_{10}, q = 3$\\
+\\
+$n_0 = 52_{10} \longrightarrow 17$ Rest $1$\\
+$n_1 = 17_{10} \longrightarrow  5$ Rest $2$\\
+$n_2 =  5_{10} \longrightarrow  1$ Rest $2$\\
+$n_3 =  1_{10} \longrightarrow  0$ Rest $1$\\
+\\
+$n = 1221_3$
+
+
+
+
+\chapter*{Tutorium 2, 04.11.2015}
+
+\chapter*{Tutorium 3, 11.11.2015}
+
+\end{document}

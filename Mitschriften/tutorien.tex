@@ -65,6 +65,7 @@ Abgabe der Dateien in gezippter Form. Es soll immer eine Run-Datei \texttt{run\_
 
 \section*{Positiossysteme}
 
+\subsection*{Einleitung}
 
 Problem: Nat\"urliche Zahlen sind abstrakte mathematische Objekte, die wir darstellen wollen.\\
 \\
@@ -72,12 +73,15 @@ L\"osung hierf\"ur sind Positionssysteme.\\
 \\
 $n  \in \mathbb{N}$, mit Basis $q \in \mathbb{N} \setminus \{0,1\}$\\
 \\
-$n = \sum_{i=0}^{k} r_i \cdot qî, 0 \leq r_i < q$ und identifizieren $n$ mit dem $r_i$ bzw. mit Ziffern (Darstellung von $n$ zur Basis $q$)\\
-\\
-Zum Beispiel:\\
+$n = \sum_{i=0}^{k} r_i \cdot qî, 0 \leq r_i < q$ und identifizieren $n$ mit dem $r_i$ bzw. mit Ziffern (Darstellung von $n$ zur Basis $q$)
+
+\subsection*{Beispiel}
+
 $1 \cdot 10^2 + 2 \cdot 10^1 + 3 \cdot 10^0 = 123_{10}$\\
-$1 \cdot 7^2 + 2 \cdot 7^1 + 3 \cdot 7^0 = 123_7$\\
-\\
+$1 \cdot 7^2 + 2 \cdot 7^1 + 3 \cdot 7^0 = 123_7$
+
+\subsection*{Umrechnen}
+
 Umrechnen: $q \in \mathbb{N} \setminus \{0,1\}$\\
 \\
 $n_0 = \sum_{i=0}^{k} r_i \cdot q^i \longrightarrow \frac{n_0}{q} = \sum_{i=1}^{k} r_i \cdot q^{i-1}$ + Rest $r_0$\\
@@ -96,7 +100,41 @@ $n_3 =  1_{10} \longrightarrow  0$ Rest $1$\\
 \\
 $n = 1221_3$
 
+\section*{Darstellung von negativen Zahlen}
 
+$q=2$ ab jetzt (Dual bzw. Bin\"arsystem) mit Vorzeichen-Bit: Darstellung der Zahl im 2er-System, erstes Bit gibt Vorzeichen an (+ = 0, - = 1)\\
+\\
+\subsection{Beispiel}
+
+z.B. 4-Bit, $3_{10} = 0011_2$, $-3 = 1011$ (nicht Zweierkomplement!)
+
+\subsection*{N-Bit Zweierkomplement}
+
+N=4, positive Zahlen wie gewohnt, negative wie folgt:\\
+$n = -3_{10} \rightarrow 0011 \rightarrow 1100 \rightarrow 1101$ (Bit-Flip, +1)\\
+\\
+Vorteile: $0$ eindeutig $(0000 \rightarrow 1111 \rightarrow [1]0000)$ [nur 4 Bit] 
+
+\section*{Programmieren in MATLAB}
+
+\subsection*{Funktionen}
+
+\begin{verbatim}
+function c = kgV(a,b)
+c = 0;
+i = 1;
+
+while i <= a*b % solange i <= a * b tue folgendes
+  if mod(i,a) == 0 && mod(i,b) == 0
+    c = 1;
+    break; % beende die Schleife
+  else % ansonsten
+    i = i+1;
+  end
+end
+
+end %eof
+\end{verbatim}
 
 
 \chapter*{Tutorium 2, 04.11.2015}

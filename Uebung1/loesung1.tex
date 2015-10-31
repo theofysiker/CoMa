@@ -61,9 +61,10 @@ $= C \cdot 36^3 + Y \cdot 36^2 + 5 \cdot 36^1 + 2 \cdot 36^0 = CY52_{36}$
 
 \section*{Aufgabe 2}
 
+\newpage
 \section*{Aufgabe 3}
 
-Datei: \texttt{run\_1\_3.m}
+\subsection*{Datei: \texttt{run\_1\_3.m}}
 \begin{verbatim}
 %%% Uebung 1 %%%
 
@@ -88,7 +89,8 @@ d2_p714_p16 = dual2(714,16)
 d2_n512_p16 = dual2(-512,16)
 d2_n77_p16  = dual2(-77,16)
 \end{verbatim}
-Datei: \texttt{dual1.m}
+\newpage
+\subsection*{Datei: \texttt{dual1.m}}
 \begin{verbatim}
 function [A] = dual1(z,b)
 
@@ -124,7 +126,8 @@ A = result;
 
 end %eof
 \end{verbatim}
-Datei: \texttt{dual2.m}
+\newpage
+\subsection*{Datei: \texttt{dual2.m}}
 \begin{verbatim}
 function [A] = dual2(z,b)
 
@@ -186,6 +189,8 @@ A = result;
 
 end %eof
 \end{verbatim}
+\newpage
+
 
 \section*{Aufgabe 4}
 
@@ -199,11 +204,12 @@ end %eof
 \end{verbatim}
 
 \begin{verbatim}
-     15 = 1111
-      5 =  101
-   15-5 = 1111 - 101 = 1010
-     10 = 1010
+     15 = 01111
+      5 = 00101
+   15-5 = 01111 - 00101 = 01010
+     10 = 01010
 \end{verbatim}
+Solange man in der Rang des b-Bit Zweierkomplement bleibt macht es keinen Unterschied, ob man im Zweierkomplement rechnet oder nicht. Sobald die Range \"uberschritten wird, w\"urde ein falsches Ergebnis entstehen.
 
 
 \subsection*{Teilaufgabe b)}
@@ -250,11 +256,13 @@ Rechnung f\"ur $3+(-4)$
 3+(-4) = 00011 + 11011 = 11110
     -2 = 11110
 \end{verbatim}
+Das Ergebnis w\"are immer 1 kleiner als es seien sollte?!\\
+Durch das addieren der $1$ entsteht eine Symmetrie zur $0$. (Beispiel: $x_2^{(b)} - x_2^{(b)} = 0$)
 
 \subsection*{Teilaufgabe c)}
 
 Die m\"ogliche Range einer 5-Bit Zweierkomplementzahl wird \"uberschritten.\\
-$$minBound(Zweierkomplement_{5 Bit}) = 2^{4}$$
-$$maxBound(Zweierkomplement_{5 Bit}) = 2^{4} -1$$
+$$minBound(Zweierkomplement_{5 Bit}) = -2^{4} = -16$$
+$$maxBound(Zweierkomplement_{5 Bit}) = 2^{4} -1 = 15$$
 
 \end{document}

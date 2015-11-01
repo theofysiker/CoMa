@@ -2,6 +2,8 @@
 
 \usepackage{graphicx} % to be able to include graphics
 \usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
 
 \begin{document}
 
@@ -60,6 +62,21 @@ $17HAI_{26} = 1 \cdot 26^4 + 7 \cdot 26^3 + H \cdot 26^2 + A \cdot 26^1 + I \cdo
 $= C \cdot 36^3 + Y \cdot 36^2 + 5 \cdot 36^1 + 2 \cdot 36^0 = CY52_{36}$
 
 \section*{Aufgabe 2}
+
+$r$ l\"asst sich als $k$-te Potenz von $q$ darstellen: $\forall k \in \mathbb{N} \setminus \{0,1\}: r < q^k$.\\
+F\"ur den Fall $k=1$ gilt: $r = q$.\\
+\\
+Um eine Ziffer $a_{i} \in Z_r$ darzustellen ben\"otigt man $k$-viele Ziffern $b_i \in Z_q$.\\
+\\
+Um eine Zahl $a_r$ mit $n$ vielen Ziffern $a_i \in Z_r$ als Zahl $b_q$ darstellen zu k\"onnen werden $n \cdot k$ viele Ziffern $b_i \in Z_q$ ben\"otigt, wenn jede Ziffer $a_i$ dargestellt werden soll.\\
+\\
+Zur Erinnerung, es gilt: $a_{n-1} \neq 0$\\
+\\
+Falls die Darstellung der ersten Ziffer $a_{n-1}$ in $b_q$, also $b_{m-1}b_{m-2}...b_{m-k-1}$ nicht $0$ sind, hat die Zahl $b_q$ tats\"achlich auch $m = n \cdot k$ viele Ziffern.\\
+\\
+Falls die Darstellung der ersten Ziffer $a_{n-1}$ in $b_q$, also $b_{m-1}$, $b_{m-1}b_{m-2}$,$...$,$b_{m-1}b_{m-2}...b_{m-k-1}$ gleich $0$ sind, hat die Zahl $b_q$ zwischen $(n-1) \cdot k$ und $n \cdot k$ viele Ziffern.\\
+\\
+Daher gilt: $(n-1) \cdot k \leq m \leq n \cdot k$
 
 \newpage
 \section*{Aufgabe 3}

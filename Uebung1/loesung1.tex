@@ -59,7 +59,7 @@ $= 1 \cdot 2^8 + 1 \cdot 2^7 + 0 \cdot 2^6 + 1 \cdot 2^5 + 1 \cdot 2^4 + 1 \cdot
 \subsection*{Teilaufgabe d)}
 
 $17HAI_{26} = 1 \cdot 26^4 + 7 \cdot 26^3 + H \cdot 26^2 + A \cdot 26^1 + I \cdot 26^0 = 592454_{10}$\\
-$= C \cdot 36^3 + Y \cdot 36^2 + 5 \cdot 36^1 + 2 \cdot 36^0 = CY52_{36}$
+$= C \cdot 36^3 + P \cdot 36^2 + 5 \cdot 36^1 + 2 \cdot 36^0 = CY52_{36}$
 
 \section*{Aufgabe 2}
 
@@ -114,7 +114,7 @@ function [A] = dual1(z,b)
 result = zeros(1,b); % Initialisierung eines b-Bit langen Arrays
 
 if b < 2
-    error('Es müssen wenigstens 2 Bit verwendet werden (b>1)!')
+    error('Es muessen wenigstens 2 Bit verwendet werden (b>1)!')
 end
 
 % Vorzeichenbit setzen
@@ -123,7 +123,7 @@ if z < 0
     z=-z;
 end
 
-% Binärzahl berechnen
+% Binaerzahl berechnen
 for i = length(result):-1:2
 
     % falls z = 0 ist, beende die for-Schleife
@@ -134,7 +134,7 @@ for i = length(result):-1:2
     r = mod(z,2);                             % mod(z,2)
     z = idivide(int32(z), int32(2), 'floor'); % div(z,2)
     
-    % Füge r an die passende Position des Ergebnisarrays ein.
+    % Fuege r an die passende Position des Ergebnisarrays ein.
     result(1,i) = r; 
  
 end
@@ -151,7 +151,7 @@ function [A] = dual2(z,b)
 result = zeros(1,b); % Initialisierung eines b-Bit langen Arrays
 
 if b < 2
-    error('Es müssen wenigstens 2 Bit verwendet werden (b>1)!')
+    error('Es muessen wenigstens 2 Bit verwendet werden (b>1)!')
 end
 
 if z < 0
@@ -160,7 +160,7 @@ else
     n = z;
 end
 
-% Binärzahl berechnen
+% Binaerzahl berechnen
 for i = b:-1:2
 
     % falls z = 0 ist, beende die for-Schleife
@@ -171,7 +171,7 @@ for i = b:-1:2
     r = mod(n,2);                             % mod(z,2)
     n = idivide(int32(n), int32(2), 'floor'); % div(z,2)
     
-    % Füge r an die passende Position des Ergebnisarrays ein.
+    % Fuege r an die passende Position des Ergebnisarrays ein.
     result(1,i) = r; 
  
 end

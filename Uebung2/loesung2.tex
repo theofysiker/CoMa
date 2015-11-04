@@ -4,6 +4,7 @@
 \usepackage[ngerman]{babel}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{stmaryrd}
 
 \begin{document}
 
@@ -17,13 +18,16 @@
 \titlerunning{Computerorientierte Mathematik I\\
 \"Ubung 2}
 
-\author{Samanta Scharmacher\inst{1}\\Nicolas Lehmann\inst{2} (Dipl. Kfm., BSC)}
-\authorrunning{Samanta Scharmacher \& Nicolas Lehmann} % abbreviated author list (for running head)
-\tocauthor{Samanta Scharmacher, Nicolas Lehmann}
+\author{Gideon Schr\"oder\inst{1}\\Samanta Scharmacher\inst{2}\\Nicolas Lehmann\inst{3} (Dipl. Kfm., BSC)}
+\authorrunning{Samanta Scharmacher \& Nicolas Lehmann \& Gideon Schr\"oder} % abbreviated author list (for running head)
+\tocauthor{Samanta Scharmacher, Nicolas Lehmann, Gideon Schr\"oder}
 
 \date{\today}
 
 \institute{
+Freie Universit\"at Berlin, FB Physik,\\
+Institut f\"ur Physik, \email{gideon.2610@hotmail.de}
+\and
 Freie Universit\"at Berlin, FB Mathematik und Informatik,\\
 Institut f\"ur Informatik, \email{scharbrecht@zedat.fu-berlin.de}
 \and
@@ -55,10 +59,33 @@ Freie Universit\"at Berlin, FB Mathematik und Informatik,\\Institut f\"ur Inform
 \subsection*{Teilaufgabe a)}
 
 %https://www.informatik.uni-leipzig.de/~meiler/MuP.dir/MuPWS11.dir/Vorlesung/Kap00_MZ.pdf (Seite 5)
-
+Zu zeigen: 
+\begin{center}
+\textit{Jeder endliche Dualbruch ist auch ein endlicher Dezimalbruch.}
+\end{center}
+Ein beliebiger Dualbruch ist darstellbar als:
+$$\sum_{i=-m}^{n} z_{i} \cdot 2^{i} = \sum_{i=-m}^{-1} z_{i} \cdot 2^{i} + \sum_{i=0}^{n} z_{i} \cdot 2^{i} = \sum_{i=1}^{m} z_{i} \cdot 2^{-i} + \sum_{i=0}^{n} z_{i} \cdot 2^{i}$$ 
+Ein beliebiger Dezimalbruch ist darstellbar als:
+$$\sum_{i=-m}^{n} z_{i} \cdot 10^{i} = \sum_{i=-m}^{-1} z_{i} \cdot 10^{i} + \sum_{i=0}^{n} z_{i} \cdot 10^{i} = \sum_{i=1}^{m} z_{i} \cdot 10^{-i} + \sum_{i=0}^{n} z_{i} \cdot 10^{i}$$ 
+$$\sum_{i=-m}^{n} z_{i} \cdot (2^3+2^1)^{i} = \sum_{i=-m}^{-1} z_{i} \cdot (2^3+2^1)^{i} + \sum_{i=0}^{n} z_{i} \cdot (2^3+2^1)^{i} = \sum_{i=1}^{m} z_{i} \cdot (2^3+2^1)^{-i} + \sum_{i=0}^{n} z_{i} \cdot (2^3+2^1)^{i}$$
+Wir rechnen aus:
+$$\sum_{i=-m}^{n} z_{i} \cdot 10^{i} =\sum_{i=0}^{m-1} z_{i+1} \cdot \sum_{j=0}^{m-1} \underbrace{\frac{2^3!}{(2^3-2^1)!-2^1!}}_{=56\frac{56}{359}=c'} \cdot 2^{3^{(2^3+j)}} \cdot 2^{1^{-j}} + \sum_{i=0}^{n} z_{i} \cdot \sum_{j=0}^{n} \underbrace{\frac{2^3!}{(2^3-2^1)!-2^1!}}_{=56\frac{56}{359}=c'} \cdot 2^{3^{(2^3-j)}} \cdot 2^{1^{j}}$$
+$$\sum_{i=-m}^{n} z_{i} \cdot 10^{i} =\sum_{i=0}^{m-1} z_{i+1} \cdot \sum_{j=0}^{m-1} c' \cdot 2^{3^{(2^3+j)}} \cdot 2^{-j} + \sum_{i=0}^{n} z_{i} \cdot \sum_{j=0}^{n} c' \cdot 2^{3^{(2^3-j)}} \cdot 2^{j}$$
+$$\sum_{i=-m}^{n} z_{i} \cdot 10^{i} =\sum_{i=0}^{m-1} z_{i+1} \cdot \sum_{j=0}^{m-1} c' \cdot 2^{3 \cdot 8} \cdot 2^{3 \cdot j} \cdot 2^{-j} + \sum_{i=0}^{n} z_{i} \cdot \sum_{j=0}^{n} c' \cdot 2^{3 \cdot 8} \cdot 2^{-j} \cdot 2^{j}$$
+$$\sum_{i=-m}^{n} z_{i} \cdot 10^{i} =\sum_{i=0}^{m-1} z_{i+1} \cdot \sum_{j=0}^{m-1} c' \cdot \underbrace{2^{3 \cdot 8}}_{= c''} \cdot 2^{2 \cdot j} + \sum_{i=0}^{n} z_{i} \cdot \sum_{j=0}^{n} c' \cdot \underbrace{2^{3 \cdot 8}}_{= c''} \cdot 1$$
+$$\sum_{i=-m}^{n} z_{i} \cdot 10^{i} =\sum_{i=0}^{m-1} z_{i+1} \cdot \sum_{j=0}^{m-1} \underbrace{c' \cdot c''}_{=c'''} \cdot 2^{2 \cdot j} + \sum_{i=0}^{n} z_{i} \cdot \sum_{j=0}^{n} \underbrace{c' \cdot c''}_{=c'''}$$
+$$\sum_{i=-m}^{n} z_{i} \cdot 10^{i} =\sum_{i=0}^{m-1} z_{i+1} \cdot \sum_{j=0}^{m-1} c''' \cdot 2^{2 \cdot j} + \sum_{i=0}^{n} z_{i} \cdot n \cdot c'''$$
+$$\sum_{i=-m}^{n} z_{i} \cdot 10^{i} = c''' \cdot \left(\sum_{i=0}^{m-1} z_{i+1} \cdot \sum_{j=0}^{m-1} 2^{2 \cdot j} + \sum_{i=0}^{n} z_{i} \cdot n\right)$$
+$\hfill \square$
 \subsection*{Teilaufgabe b)}
 
-Gegenbeispiel: $0,4_{10} = 0,\overline{0110}_2$
-
+Angenommen es gilt:
+\begin{center}
+\textit{Jeder endliche Dezimalbruch ist auch ein endlicher Dualbruch.}
+\end{center}
+Dann w\"are die Dezimalzahl $0,4$ als endlicher Dualbruch darstellbar.
+\begin{center}
+$0,4_{10} = 0,\overline{0110}_2$, Widerspruch $\lightning$
+\end{center}
 
 \end{document}

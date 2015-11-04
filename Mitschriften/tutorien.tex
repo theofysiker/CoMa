@@ -139,6 +139,93 @@ end %eof
 
 \chapter*{Tutorium 2, 04.11.2015}
 
+\subsection*{Wiederholung zur Vorlesung}
+
+$z_{n}z_{n-1}z...z_{0}z_{-1}...z_{-m}= \sum_{i=-m}^{n} z_i \cdot q^{i}$, $q \in \mathbb{N} \setminus \{0,1\}$, $z_i \in \{0,...,q-1\}$\\
+\\
+z.B. $q=10$ Dezimalbruch, $q=2$ Dualbruch\\
+\\
+Nicht jeder Bruch ist in endlicher q-adischer Bruch.\\
+\\
+z.B. $\frac{1}{3} = 0,333... = 0,\overline{3}$, aber jeder Brch ist ei periodischer q-adicher Bruch.\\
+z.B. $\frac{1}{4} = 0,25\overline{0} = 0,24\overline{9}$\\
+\\
+$\frac{1}{3} = 0,333... = 0,3 \cdot (1 + 10^{-1}+10^{-2}+...) = 0,3 \cdot \sum_{i=0}^{\infty} = \frac{1}{1-\frac{1}{10}} = \frac{3}{10} \cdot \frac{1}{\frac{9}{10}} = \frac{3}{10} \cdot \frac{10}{9} = \frac{1}{3}$\\
+\\
+$0,001100110011_2 = 0,\overline{0011} = (\frac{1}{8} + \frac{1}{16}) \cdot (2^0 +2^{-4} + 2^{-8}+...) = \frac{3}{16} \cdot \sum_{i=0}^{\infty} 2^-4i = \frac{3}{16} \cdot \frac{1}{1-2^{-4}} = \frac{3}{16} \cdot \frac{1}{1-\frac{1}{16}} = \frac{3}{16} \cdot \frac{16}{15} = \frac{1}{5}$
+
+\subsection*{Umrechnen}
+
+$q \in \mathbb{N} \setminus \{0,1\}$, $z = \sum_{i=-m}^{n} z_i \cdot q^{i} = \sum_{i=0}^{n} z_i \cdot q^{i} + \sum_{i=-m}^{-1} z_i \cdot q^{i}$\\
+Hinweis: Erste Summe wie gewohnt umrechnen, zweite Summe konvertieren zu $\sum_{i=1}^{m} z_i \cdot q^{-i}$\\
+\\
+1. Fall: $m \in \mathbb{N}$\\
+\\
+$z = p_1p_2...p_m$, mit $m \in \mathbb{N} \cup \{\infty\}$\\
+\\
+$p_1 = \sum_{i=1}^{m} z_i \cdot q^{-i} \longrightarrow \sum_{i=2}^{m} z_i \cdot q^{-i+1} + z_1$\\
+$p_2 = \sum_{i=2}^{m} z_i \cdot q^{-i+1} \longrightarrow \sum_{i=3}^{m} z_i \cdot q^{-i+2} + z_2$\\
+...\\
+$p_m = z_m \cdot q^{-1} \longrightarrow 0 + z_m$\\
+\\
+2. Fall: $m \in \infty$\\
+\\
+$p_k = \sum_{i=k}^{\infty} z_{i} \cdot q^{-i} \longrightarrow \sum_{i=k+1}^{\infty} z_{i} \cdot q^{-i+1} + z_{k}$ mit $p_{k+1} = p_{l}$, $l \leq k$\\
+\\
+$\Rightarrow z = z_{n}...z_{0},z_{1}...z_{l-1}\overline{z_{l}...z_{k}}$
+
+\subsection*{Beispiel}
+
+$z = \frac{1}{7}$, $q = 10$\\
+$p_1 = \frac{1}{7} \longrightarrow \frac{10}{7} = \frac{3}{7}+1$\\
+$p_2 = \frac{3}{7} \longrightarrow \frac{30}{7} = \frac{2}{7}+4$\\
+$p_3 = \frac{2}{7} \longrightarrow \frac{20}{7} = \frac{6}{7}+2$\\
+$p_4 = \frac{6}{7} \longrightarrow \frac{60}{7} = \frac{4}{7}+8$\\
+$p_5 = \frac{4}{7} \longrightarrow \frac{40}{7} = \frac{5}{7}+5$\\
+$p_6 = \frac{5}{7} \longrightarrow \frac{50}{2} = \frac{1}{7}+7$\\
+\\
+$\Rightarrow 0,\overline{142857}$\\
+\\
+In diesem Fall $l=1, k=6$, $p_1 = \frac{1}{7} = p_{k+1}$
+
+\subsection*{Beispiel}
+
+$z = \frac{1}{10}$, $q = 2$\\
+$p_1 = \frac{1}{10} \longrightarrow \frac{1}{5}+0$\\
+$p_2 = \frac{1}{5} \longrightarrow \frac{2}{5}+0$\\
+$p_3 = \frac{2}{5} \longrightarrow \frac{4}{5}+0$\\
+$p_4 = \frac{4}{5} \longrightarrow \frac{3}{5}+1$\\
+$p_5 = \frac{3}{5} \longrightarrow \frac{1}{5}+1$\\
+\\
+$\Rightarrow 0,0\overline{0011}$, da $p_2 = p_6$
+
+\subsection*{Umrechnen}
+
+Rechnen mit Dualzahlen geht genauso wie im Dezimalsystem, z.B.: $111 \cdot 101,1$\\
+\\
+$11,1 + 111 + 0000 + 11100 = 100110,1$
+
+\subsection*{Numerische Darstellung von reelen Zahlen}
+
+Problem: Reele Zahlen sind nicht abz\"ahlbar, weshalb es kein Ziffernsystem f\"ur sie geben kann. Man kann nur Approximationen ausgeben, z.B. q-adische Br\"uche.
+
+\subsection*{Festkommazahlen}
+
+Feste Anzahl von $n$ Vor- und Nachkommastellen.\\
+\\
+Darstellung iner reelen Zahl: $z_{n-1}z_{n-2}...z_{0},z_{-1}...z_{-m} = \sum_{i=-m}^{n-1} z_i \cdot q^{i}$, $z_i \in \{0,...,q-1\}$
+
+\subsection*{Beispiel}
+
+$x = \pi$, $n=3$, $m=1$ $\rightarrow$ $\tilde{x} = 003,1$, Problem: Kann ungenau sein, bei festem $n$ und $m$.
+
+\subsection*{Gleitkommazahlen}
+
+\textit{genauer} bedeutet, dass der absolute Fehler $| x - \tilde{x} |$ bzw. der relative Fehler $\frac{| x - \tilde{x} |}{|x|}$ möglichst klein ist.\\
+\\
+Die Zahl $\tilde{x} = (-1)^{s}aq^{e}$ mit $s \in \{0,1\}$ Vorzeichenbit und $a=0,a_{1}...a_{l}$, $a_1 \neq 0$ oder $\forall i: a_{i} = 0$, $a_i \in \{0,...,q-1\}$ und Exponent $e \in \mathbb{Z}$ heißt Gleitkommazahl mit MAntissenl\"ange $l$, Schreibweise $\tilde{x} \in G(q,l)$\\
+\\
+z.B.: $-12345,67 \longrightarrow (-1)^1 \cdot 0,1234567 \cdot 10^{-2}$, also $s=1$,$l=7$,$e=-2$, $q=0,1234567$
 \chapter*{Tutorium 3, 11.11.2015}
 
 \end{document}

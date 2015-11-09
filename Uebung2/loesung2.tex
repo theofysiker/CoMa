@@ -88,8 +88,8 @@ p_3 &= \frac{250}{625} \longrightarrow \frac{3750}{625} = 0 + 6\\
                   &= 0,1_2 \cdot \frac{1_2}{1_2-\frac{1_2}{10^{10_2}_2}} \\
                   &= 0,1_2 \cdot \frac{1_2}{\frac{11_2}{100_2}} \\
                   &= 0,1_2 \cdot \frac{100_2}{11_2} \\
-                  &= \frac{100}{11110}_2 \\
-                  &= \frac{10}{1111}
+                  &= \frac{100_2}{11110_2} \\
+                  &= \frac{10_2}{1111_2}
 \end{align*}
 
 
@@ -128,7 +128,8 @@ Zu zeigen:
 \end{center}
 Ein beliebiger Dualbruch ist darstellbar als:
 \begin{align*}
-\sum_{i=-m}^{n} z_{i} \cdot 2^{i} &= \sum_{i=-m}^{-1} z_{i} \cdot 2^{i} + \sum_{i=0}^{n} z_{i} \cdot 2^{i} \\
+\sum_{i=-m}^{n} z_{i} \cdot 2^{i} &= \sum_{i=-m}^{n} z_{i} \cdot \left( \frac{10}{5} \right)^{i} \\
+\Leftrightarrow \sum_{i=-m}^{n} z_{i} \cdot 2^{i} &= \sum_{i=-m}^{-1} z_{i} \cdot 2^{i} + \sum_{i=0}^{n} z_{i} \cdot 2^{i} \\
                                   &= \sum_{i=1}^{m} z_{-i} \cdot 2^{-i} + \sum_{i=0}^{n} z_{i} \cdot 2^{i} \\
                                   &= \sum_{i=0}^{m-1} z_{1-i} \cdot 2^{1-i} + \sum_{i=0}^{n} z_{i} \cdot 2^{i}\\
 \Leftrightarrow \sum_{i=-m}^{n} z_{i} \cdot \left( \frac{10}{5} \right)^{i} &= \sum_{i=-m}^{n} z_{i} \cdot \left(\frac{1}{5}\right)^{i} 10^{i} \\

@@ -213,7 +213,7 @@ Problem: Reele Zahlen sind nicht abz\"ahlbar, weshalb es kein Ziffernsystem f\"u
 
 Feste Anzahl von $n$ Vor- und Nachkommastellen.\\
 \\
-Darstellung iner reelen Zahl: $z_{n-1}z_{n-2}...z_{0},z_{-1}...z_{-m} = \sum_{i=-m}^{n-1} z_i \cdot q^{i}$, $z_i \in \{0,...,q-1\}$
+Darstellung einer reelen Zahl: $z_{n-1}z_{n-2}...z_{0},z_{-1}...z_{-m} = \sum_{i=-m}^{n-1} z_i \cdot q^{i}$, $z_i \in \{0,...,q-1\}$
 
 \subsection*{Beispiel}
 
@@ -226,6 +226,48 @@ $x = \pi$, $n=3$, $m=1$ $\rightarrow$ $\tilde{x} = 003,1$, Problem: Kann ungenau
 Die Zahl $\tilde{x} = (-1)^{s}aq^{e}$ mit $s \in \{0,1\}$ Vorzeichenbit und $a=0,a_{1}...a_{l}$, $a_1 \neq 0$ oder $\forall i: a_{i} = 0$, $a_i \in \{0,...,q-1\}$ und Exponent $e \in \mathbb{Z}$ heißt Gleitkommazahl mit MAntissenl\"ange $l$, Schreibweise $\tilde{x} \in G(q,l)$\\
 \\
 z.B.: $-12345,67 \longrightarrow (-1)^1 \cdot 0,1234567 \cdot 10^{-2}$, also $s=1$,$l=7$,$e=-2$, $q=0,1234567$
+
 \chapter*{Tutorium 3, 11.11.2015}
+
+\subsection*{Runden}
+
+Suchen zu jedem $x \in \mathbb{R}$ ein $rd(x)  \in G(q,l$) mit $|x-rd(x)| \leq |x-\tilde{x}|$, $\forall \tilde{x} \in G(q,l)$\\
+Wir schreiben $x \in \mathbb{R}_{>0}$, so dass $x=0,a_1a_2...a_{l+1}... \cdot q^l$ f\"ur passendes $l \in \mathbb{Z}$\\
+\\
+Definiere $a:= 0,a_1...a_l + \begin{cases} 0, \text{falls} \, a_q+1 < \frac{1}{2}q \\ q^{-l}, \text{sonst}\end{cases}$\\
+\\
+$x \geq 0: rd(x) = a \cdot q^l$\\
+$x<0: rd(x) = -rd(-x)$\\
+$rd(x)$ ist L\"osung.\\
+\\
+! nicht f\"ur ungerade $q$: z.B. $x = 1,012 \longrightarrow rd(x) \in G(3,2) \longrightarrow |x-rd(x)| = 0,012$, aber $1,1 \in G(3,2)$ und $|1,1 - 1,012| = 0,011 < 0,012$\\
+\\
+Ab jetzt $q$ gerade:
+\begin{itemize}
+\item absoluter Rundungsfehler $|x-rd(x)|$ ist unbeschr\"ankt!
+\item relativer rundungsfehler $\frac{|x-rd(x)|}{|x|} \leq \frac{q}{2} \cdot q^{-l} = eps$ (Maschinengenauigkeit)
+\end{itemize}
+
+\subsection*{Gleitkommazahl}
+
+Eine Gleitkommazahl $\tilde{x} \in G(q,l)$ repr\"asentiert alle $x \in \mathbb{R}$, die auf $\tilde{x}$ gerundet werden, also alle $x in [\tilde{x} - q^{l-1}eps , \tilde{x} + q^{l-1}eps)$\\
+\\
+Gleichheitsabfragen ergeben keinen Sinn!
+
+\subsection*{Hausaufgabenvorbesprechung}
+
+zu 2)
+\begin{itemize}
+\item $0,00001$ und $1 \in G(10,1)$, $1+0,00001 \notin G(10,1) \longrightarrow rd(1,00001) = 1$
+\end{itemize}
+zu 3)
+\begin{itemize}
+\item Definition von $eps$
+\item Fallunterscheidung $rd(s) = 0$ und $rd(s) \neq 0$
+\item Dreiecksungleichung
+\end{itemize}
+
+\chapter*{Tutorium 4, 18.11.2015}
+
 
 \end{document}

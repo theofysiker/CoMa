@@ -1,4 +1,4 @@
-inv(X'*X)%%% clean environment
+%%% clean environment
 clear all
 clc
 close all
@@ -13,7 +13,7 @@ y = [80; 72; 83; 65; 77; 78; 90; 85];
 beta_p = inv(X'*X)*X'*y
 
 % loesung student
-A1 = inv(X'*X); % ungleich zur Aufgabenstellung durch Fehler: A1 != A2
+A1 = inv(X'*X) % ungleich zur Aufgabenstellung durch Fehler: A1 != A2
 A2 = [154.86 -0.85 -0.08; -0.85 0.005 0.0002; -0.08 0.0002 0.0008];
 B = X'*y;
 beta_s = A2*B
@@ -31,14 +31,14 @@ else
 end
 
 % idee
-
-add(0,y) = y
-add(x+1,y) = 1+add(x,y)
-
-mult(0,y) = 0
-mult(x+1,y) = add(y,mult(x,y))
-
-div(0,y) = 0
-div(x+1,y)
-    | mod(x+1,y) == 0 = x+1 + div(x,y)
-    | otherwise = 0+ div(x,y)
+% 
+% add(0,y) = y
+% add(x+1,y) = 1+add(x,y)
+% 
+% mult(0,y) = 0
+% mult(x+1,y) = add(y,mult(x,y))
+% 
+% div(0,y) = 0
+% div(x+1,y)
+%     | mod(x+1,y) == 0 = x+1 + div(x,y)
+%     | otherwise = 0+ div(x,y)

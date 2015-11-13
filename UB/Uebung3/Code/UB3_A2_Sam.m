@@ -34,7 +34,7 @@ function erg=runden(x,L)
 	end;
 	erg=x;
 end;
-
+disp('runden')
 runden(0.14,1)
 runden(0.0014,1)
 runden(0.0015,1)
@@ -44,3 +44,36 @@ runden(-0.14,1)
 runden(-0.0014,1)
 runden(-0.0015,1)
 runden(-0.0015325,4)
+
+runden(-1.0015325,4)
+
+function erg=taschenrechner(L,x,y,op)
+	switch (op)
+		case 0
+			erg=runden(x+y,L);
+		case '+'
+			erg=runden(x+y,L);
+			
+		case 1
+			erg=runden(x-y,L);
+		case '-'
+			erg=runden(x-y,L);
+			
+		case 2
+			erg=runden(x*y,L);
+		case '*'
+			erg=runden(x*y,L);
+			
+		case 3	
+			erg=runden(x/y,L);
+		case '/'	
+			erg=runden(x/y,L);
+		otherwise
+			error('Unknown Operator!!')
+	end;
+end;
+disp('tasch');
+taschenrechner(3,0.123,0.006,'+')
+taschenrechner(2,0.123,0.006,'+')
+taschenrechner(3,0.123,0.006,0)
+taschenrechner(2,0.123,0.006,0)

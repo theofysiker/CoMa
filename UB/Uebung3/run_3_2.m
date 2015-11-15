@@ -32,6 +32,7 @@ testR7 = runden(1.0015725,5)
 testR8 = runden(-1.0015725,5)
 
 % taschenrechner(L,x,y,op)
+disp('taschenrechner')
 testT1 = taschenrechner(4,0.0275,15.175,'+')
 testT2 = taschenrechner(4,0.0275,15.175,'-')
 testT3 = taschenrechner(4,0.0275,15.175,'*')

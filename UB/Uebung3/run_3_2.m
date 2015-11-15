@@ -37,3 +37,14 @@ testT1 = taschenrechner(4,0.0275,15.175,'+')
 testT2 = taschenrechner(4,0.0275,15.175,'-')
 testT3 = taschenrechner(4,0.0275,15.175,'*')
 testT4 = taschenrechner(4,0.0275,15.175,'/')
+
+disp('Binomische Formel')
+tB1_a = taschenrechner(6,0.12345,-0.1234,'+');
+tB1_b = taschenrechner(6,tB1_a,tB1_a,'*');
+testB1 = taschenrechner(6,tB1_a,tB1_b,'+')
+tB2_aa    = taschenrechner(6,0.12345,0.12345,'*');
+tB2_2a    = taschenrechner(6,2,0.12345,'*');
+tB2_2ab   = taschenrechner(6,tB2_2a,-0.1234,'*');
+tB2_bb    = taschenrechner(6,-0.1234,-0.1234,'*');
+tB2_aa_2a = taschenrechner(6,tB2_aa,tB2_2a,'+');
+testB2    = taschenrechner(6,tB2_aa_2a,tB2_bb,'+')

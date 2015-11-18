@@ -269,5 +269,45 @@ zu 3)
 
 \chapter*{Tutorium 4, 18.11.2015}
 
+\section*{Relative Konditionierung}
 
+\subsection*{o-Notation}
+
+$o$ ist eines der Landau-Symbole. Landau-Symbolebeschreiben Wachstum von Funktionen.\\
+\\
+Def.: $f(x) \in o(h(x)) \Leftrightarrow lim_{x \rightarrow 0}\frac{f(x)}{h(x)} = 0$\\
+\\
+$o(x) = \{f | lim_{x \rightarrow 0} \frac{f(x)}{x} = 0\}$ z.B.: $lim_{x \rightarrow 0} \frac{x^2}{x} = lim_{x \rightarrow 0} x = 0 \Longrightarrow x^2 \in o(x)$ f\"ur $x \rightarrow 0$.
+
+\subsection*{Kondition der Grundrechenarten}
+
+Wie verst\"arkt sich der (relative) Fehler in den Eingabedaten, wenn wir mit gerundeten Daten rechnen?\\
+\\
+$\tilde{x} = x \cdot (1+ \epsilon_x)$ und $\tilde{y} = y \cdot (1+\epsilon_y)$\\
+\\
+$\epsilon := max(\epsilon_x, \epsilon_y) \leq eps(q,l)$\\
+\\
+Definition der relativen Kontition der Grundrechenarten.\\
+\\
+Sei $* \in \{+,-,\cdot, /\}$, $x \cdot y \neq 0$, dann hei\ss t de kleinste Zahl $\kappa_{rel}$ mit $\frac{|x \cdot y - \tilde{x} \cdot \tilde{y}|}{|x \cdot y|} \leq \kappa_{rel} \epsilon + o(\epsilon)$ mit $\frac{o(\epsilon)}{\epsilon} \rightarrow 0$ f\"ur $\epsilon \rightarrow 0$
+
+\subsection*{Kondition von Funktionsauswertungen}
+
+Sei $I \subseteq \mathbb{R}$ Intervall, $f:I \rightarrow \mathbb{R}$, $x_0 \in I$\\
+\\
+Wir wollen untersuchen, wie sich kleine Abweichungen von $x_0$ auf die Auswertung von $f$ auswirken.\\
+\\
+Definition: Die absolute Kondition = $\kappa_{abs}$ von $f$ an der Stelle $x_0$ ist die kleinste Zahl, so dass $f(x_0) - f(\tilde{x_0})| \leq \kappa_{abs} \cdot |\tilde{x_0}-x_0| + o(|x_0 - \tilde{x_0}|)$, wenn $\kappa$ nicht existiert, setze $\kappa_{abs} = \infty$\\
+\\
+$\tilde{x_0} = rd(x_0)$
+
+\subsection*{Beispiel}
+
+$f(x) = ax+b$\\
+$|f(x)-f(\tilde{x})| = |a| \cdot |x-\tilde{x}| \Rightarrow \kappa_{abs} = |a|$\\
+$f(x) = c, c \in \mathbb{R} \Rightarrow \kappa_{abs} = 0$\\
+\\
+Falls $f$ differenzierbar $\Rightarrow \kappa_{abs} = | f'(x_0)|$
+
+\chapter*{Tutorium 5, 25.11.2015}
 \end{document}

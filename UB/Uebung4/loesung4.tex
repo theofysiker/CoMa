@@ -1,0 +1,99 @@
+\documentclass{llncs}
+
+\usepackage{graphicx} % to be able to include graphics
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+
+\begin{document}
+
+\pagestyle{headings}               % switches on printing of running heads
+
+
+\mainmatter                        % start of the contributions
+
+\title{Computerorientierte Mathematik I}
+\subtitle{\"Ubung 3}
+\titlerunning{Computerorientierte Mathematik I\\
+\"Ubung 4}
+
+\author{Gideon Schr\"oder\inst{1}\\Samanta Scharmacher\inst{2}\\Nicolas Lehmann\inst{3} (Dipl. Kfm., BSC)}
+\authorrunning{Samanta Scharmacher \& Nicolas Lehmann \& Gideon Schr\"oder} % abbreviated author list (for running head)
+\tocauthor{Samanta Scharmacher, Nicolas Lehmann, Gideon Schr\"oder}
+
+\date{\today}
+
+\institute{
+Freie Universit\"at Berlin, FB Physik,\\
+Institut f\"ur Physik, \email{gideon.2610@hotmail.de}
+\and
+Freie Universit\"at Berlin, FB Mathematik und Informatik,\\
+Institut f\"ur Informatik, \email{scharbrecht@zedat.fu-berlin.de}
+\and
+Freie Universit\"at Berlin, FB Mathematik und Informatik,\\Institut f\"ur Informatik, AG Datenbanksysteme, Raum 170,\\
+\email{mail@nicolaslehmann.de}, \texttt{http://www.nicolaslehmann.de}
+}
+
+\maketitle
+
+\begin{center}
+\includegraphics{fubsiegel.jpg}
+\end{center}
+
+\chapter*{L\"osungen zu den gestellten Aufgaben}
+
+\section*{Aufgabe 1}
+
+\subsection*{Teilaufgabe i)}
+
+\begin{align*}
+f(x) &\in o(x) \\
+g(x) &\in o(x) \\
+\\
+z.z.: f(x) + g(x) = h_1(x) &\in o(x) \\
+lim_{x \rightarrow 0} \frac{f(x) + g(x)}{x} &= 0 \\
+lim_{x \rightarrow 0} \frac{f(x)}{x} + lim_{x \rightarrow 0} \frac{g(x)}{x} &= 0 \\
+0 + 0 &= 0 &\hfill \square \\
+\\
+z.z.: f(x) \cdot \frac{1}{g(x)} = h_2(x) &\in o(x) \\
+lim_{x \rightarrow 0} \frac{f(x)}{x} \cdot \frac{1}{g(x)} &= 0 \\
+0 \cdot \frac{1}{g(0)} &= 0 &\hfill \square \\
+\\
+z.z.: f(x) \cdot g(x) = h_3(x) &\in o(x) \\
+lim_{x \rightarrow 0} \frac{f(x) \cdot g(x)}{x} &= 0 \\
+lim_{x \rightarrow 0} \frac{f(x)}{x} \cdot lim_{x \rightarrow 0} \frac{g(x)}{1} &= 0 \\
+0 \cdot g(0) &= 0 &\hfill \square
+\end{align*}
+
+\subsection*{Teilaufgabe ii)}
+
+\begin{align*}
+z.z.: \frac{|x-rd(x)|}{|x|} &= \frac{|rd(x) - x|}{|rd(x)|} + o(eps) \\
+\frac{|x-x \cdot (1-\epsilon_x)|}{|x|} &= \frac{|x \cdot (1-\epsilon_x) - x|}{|x \cdot (1-\epsilon_x)|} + o(eps) \\
+\frac{|x \cdot \epsilon_x|}{|x|} &= \frac{|x \cdot (1-\epsilon_x) - x|}{|x \cdot (1-\epsilon_x)|} + o(eps) \\
+|\epsilon_x| &= \frac{|x \cdot (1-\epsilon_x) - x|}{|x \cdot (1-\epsilon_x)|} + o(eps) \\
+|\epsilon_x| &= \frac{|1-\epsilon_x - 1|}{|1-\epsilon_x|} + o(eps) \\
+|\epsilon_x| &= \frac{|-\epsilon_x|}{|1-\epsilon_x|} + o(eps) \\
+\frac{|\epsilon_x| \cdot |1-\epsilon_x|}{|-\epsilon_x|} &= o(eps) \\
+|1-\epsilon_x| &= o(eps)
+\end{align*}
+Keine Ahnung???
+
+\section*{Aufgabe 2}
+
+Die absolute Kondition ist $0$, da die Kondition des ersten Operanden $1$ ist und die Kondition des zweiten Operanden $-1$ ist.
+
+Noch zu beweisen...
+\section*{Aufgabe 3}
+
+\begin{align*}
+lim_{x \rightarrow x_0} \frac{|((x-2)^2 - (x_0-2)^2|}{|x-x_0|} &= f'(x_0) \\
+lim_{x \rightarrow 4} \frac{|(x-2)^2 - (4-2)^2|}{|x-4|} &= 0 \\
+lim_{x \rightarrow 4} \frac{|x^2 + 4x + 4 - 4|}{|x-4|} &= 0 \\
+lim_{x \rightarrow 4} \frac{|x^2 + 4x|}{|x-4|} &= 0 \\
+lim_{x \rightarrow 4} \frac{|x \cdot (x + 4)|}{|x-4|} &= 0
+\end{align*}
+Keine Ahnung???
+
+\end{document}
